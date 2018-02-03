@@ -1,5 +1,5 @@
-# [nguyenkhois.github.io/library](https://nguyenkhois.github.io/library/)
-This is my library on GitHub and you can also find me on [vLexikon.com](https://www.vlexikon.com) (Swedish-Vietnamese dictionary) as my life project. I'm also on [Linkedin](https://www.linkedin.com/in/khoi-le-b5225814b/). I would like to receive feedback from you on what is about web programming. I always love it! (^_~)
+# [Web development library](https://nguyenkhois.github.io/library/)
+This is my web development library on GitHub and you can also find me on [vLexikon.com](https://www.vlexikon.com) (Swedish-Vietnamese dictionary) as my life project. I'm also on [Linkedin](https://www.linkedin.com/in/khoi-le-b5225814b/). I would like to receive feedback from you on what is about web programming. I always love it! (^_~)
 
 ## **Projects**
 These projects hold on always
