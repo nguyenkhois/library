@@ -22,4 +22,4 @@ I make this library for my job and share it to other who want to use in their pr
 * Mini calculator [(Repo)](https://github.com/nguyenkhois/js-minicalculator) [(View)](https://nguyenkhois.github.io/js-minicalculator/)
 
 ## Wiki
-* [My wiki on GitHub](https://github.com/nguyenkhois/nguyenkhois.github.io/wiki)
+* [My wiki on GitHub](https://github.com/nguyenkhois/library/wiki)
