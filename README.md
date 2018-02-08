@@ -20,6 +20,7 @@ I make this library for my job and share it to other who want to use in their pr
 ## **My repositories on GitHub**
 ### JavaScript
 * Mini calculator [(Repo)](https://github.com/nguyenkhois/js-minicalculator) [(View)](https://nguyenkhois.github.io/js-minicalculator/)
+* Memory game [(Repo)](https://github.com/nguyenkhois/js-memorygame) [(View)](https://nguyenkhois.github.io/js-memorygame/)
 
 ## Wiki
 * [My wiki on GitHub](https://github.com/nguyenkhois/library/wiki)
