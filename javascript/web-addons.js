@@ -29,13 +29,16 @@ function limitInputLength(elementID,length) {
 }
 function buildJSONString(arrayOfObjects) {
     //Build JSON string from an array of objects
+    //Input: an array of objects
+    //Output: a JSON string
+
     let sJSON;
     let i;
     let arrLength = arrayOfObjects.length;
 
     sJSON = "[";
     for (i = 0; i < arrLength; i++){
-        sJSON += JSON.stringify(arrayOfObjects[i]);
+        sJSON += JSON.stringify(arrayOfObjects[i]);//convert from an object to JSON string
         if (i < arrLength-1)
             sJSON += ",";
     }
@@ -44,12 +47,15 @@ function buildJSONString(arrayOfObjects) {
 }
 function buildArrayOfObjects(sJSON) {
     //Build an array of objects from JSON string
+    //Input: a JSON string
+    //Output: an array of objects
+
     let arrNew = [];
     let objJSON = JSON.parse(sJSON); //convert from JSON string to JSON object
     let i;
 
     for (i in objJSON)
-        arrNew.push(objJSON[i]);
+        arrNew.push(objJSON[i]); // add an object into an array
 
     return arrNew;
 }
