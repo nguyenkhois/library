@@ -13,10 +13,14 @@ I make this library for my job and share it to other who want to use in their pr
   Made by using HTML5, CSS3, Bootstrap 4, jQuery and more.
 
 ## **My example codes on [Codepen](https://codepen.io/khois/)**
+### CSS
 * [CSS - Simple hamburger menu](https://codepen.io/khois/pen/xXBRvK)
 * [CSS - Animation hamburger menu](https://codepen.io/khois/pen/dVrzej)
 * [CSS - Simple tabs menu](https://codepen.io/khois/pen/boOEjg)
 * [Bootstrap - Mix vertical with inline layout in a form](https://codepen.io/khois/pen/BmKGzQ) 
+
+### JavaScript
+* [Pass an object as the argument to a onclick function](https://codepen.io/khois/pen/WMdEgZ)
 
 ## **My repositories on GitHub**
 ### JavaScript
