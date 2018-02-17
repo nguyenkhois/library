@@ -27,3 +27,29 @@ function limitInputLength(elementID,length) {
     }else
         return true;
 }
+function buildJSONString(arrayOfObjects) {
+    //Build JSON string from an array of objects
+    let sJSON;
+    let i;
+    let arrLength = arrayOfObjects.length;
+
+    sJSON = "[";
+    for (i = 0; i < arrLength; i++){
+        sJSON += JSON.stringify(arrayOfObjects[i]);
+        if (i < arrLength-1)
+            sJSON += ",";
+    }
+    sJSON += "]";
+    return sJSON;
+}
+function buildArrayOfObjects(sJSON) {
+    //Build an array of objects from JSON string
+    let arrNew = [];
+    let objJSON = JSON.parse(sJSON); //convert from JSON string to JSON object
+    let i;
+
+    for (i in objJSON)
+        arrNew.push(objJSON[i]);
+
+    return arrNew;
+}
