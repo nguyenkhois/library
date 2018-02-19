@@ -1,4 +1,4 @@
-//Number
+//---------- Number ----------
 function convertStringToInterger(sNumber, fractionDigits) {
     let newNumber = parseFloat(Number(sNumber).toFixed(fractionDigits));
     if (Number.isInteger(newNumber))
@@ -20,7 +20,7 @@ function forceKeyPressNumber() {
         return true;
 }
 
-//Validation
+//---------- Validation ----------
 function validateEmailAddress(sEmail) {
     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailPattern.test(sEmail);
@@ -34,7 +34,7 @@ function limitInputLength(elementID,length) {
         return true;
 }
 
-//Object and Array
+//---------- Object and Array ----------
 function buildJSONString(arrayOfObjects) {
     //Build JSON string from an array of objects
     //Input: an array of objects
@@ -69,7 +69,7 @@ function buildArrayOfObjects(sJSON) {
 }
 
 
-//Date time
+//---------- Date time ----------
 function addZeroToDateMonth(sString){
     if (sString.toString().length === 1){
         sString = "0" + sString;
