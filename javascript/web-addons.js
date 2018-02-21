@@ -53,7 +53,7 @@ function buildJSONString(arrayOfObjects) {
     sJSON += "]";
     return sJSON;
 }
-function buildArrayOfObjects(sJSON) {
+function buildObjectArrayFromJSON(sJSON) {
     //Build an array of objects from JSON string
     //Input: a JSON string
     //Output: an array of objects
@@ -67,13 +67,22 @@ function buildArrayOfObjects(sJSON) {
 
     return arrNew;
 }
+function findIndexAnObjectInArray(objArray,objPropertyName,objPropertyValue) {
+    //Find index of an object in array by its properties name and value
+    //Input: an array, object properties: name and value
+    //Output: index or -1 if it is not found
 
+    if (Array.isArray(objArray))
+        return objArray.findIndex(objIndex => objIndex[objPropertyName] === objPropertyValue);
+    else
+        return -1;
+}
 
 //---------- Date time ----------
-function addZeroToDateMonth(sString){
-    if (sString.toString().length === 1){
+function addZeroToDateTime(sString){
+    if (sString.toString().length === 1)
         sString = "0" + sString;
-    }
+
     return sString;
 }
 function getCurrentDate(){
@@ -82,12 +91,13 @@ function getCurrentDate(){
     let month = currentDate.getMonth()+1; //The numeric representation of months in JavaScript start on '0', so you will need to add the code necessary for making the months start on '1'
     let year = currentDate.getFullYear();
 
-    return year + "-" + addZeroToDateMonth(month) + "-" + addZeroToDateMonth(date);
+    return year + "-" + addZeroToDateTime(month) + "-" + addZeroToDateTime(date);
 }
 function getCurrentTime() {
     let currentTime = new Date();
     let hours = currentTime.getHours();
     let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
 
-    return hours + ":" + minutes;
+    return addZeroToDateTime(hours) + ":" + addZeroToDateTime(minutes) + ":" + addZeroToDateTime(seconds);
 }
