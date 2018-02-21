@@ -53,7 +53,7 @@ function buildJSONString(arrayOfObjects) {
     sJSON += "]";
     return sJSON;
 }
-function buildObjectArrayFromJSON(sJSON) {
+function buildObjectArray(sJSON) {
     //Build an array of objects from JSON string
     //Input: a JSON string
     //Output: an array of objects
