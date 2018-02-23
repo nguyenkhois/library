@@ -152,3 +152,18 @@ OwnObjectArray.findIndex = function (objectArray,objPropertyName,objPropertyValu
         return false;
     }
 };
+
+//---------- Query string - URL ----------
+function getParameterValue(param){
+    try{
+        let sQueryString = document.URL.split("?")[1];
+        let searchParams = new URLSearchParams(sQueryString);
+
+        if (searchParams.has(param))
+            return searchParams.get(param);
+        else
+            return false;
+    }catch(e){
+        return false;
+    }
+}
