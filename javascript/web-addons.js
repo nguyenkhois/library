@@ -35,45 +35,46 @@ function limitInputLength(elementID,length) {
 }
 
 //---------- Object and Array ----------
-function buildJSONString(arrayOfObjects) {
+function buildJSONString(objectArray) {
     //Build JSON string from an array of objects
     //Input: an array of objects
     //Output: a JSON string
 
-    let sJSON;
+    let sJSON = "[";
     let i;
-    let arrLength = arrayOfObjects.length;
+    let arrLength;
 
-    sJSON = "[";
+    Array.isArray(objectArray) ? arrLength = objectArray.length : objectArray = [];
     for (i = 0; i < arrLength; i++){
-        sJSON += JSON.stringify(arrayOfObjects[i]);//convert from an object to JSON string
+        sJSON += JSON.stringify(objectArray[i]);
         if (i < arrLength-1)
             sJSON += ",";
     }
     sJSON += "]";
+
     return sJSON;
 }
-function buildObjectArray(sJSON) {
+function buildObjectArray(stringJSON) {
     //Build an array of objects from JSON string
     //Input: a JSON string
     //Output: an array of objects
 
     let arrNew = [];
-    let objJSON = JSON.parse(sJSON); //convert from JSON string to JSON object
+    let objJSON = JSON.parse(stringJSON) || {}; //convert from JSON string to JSON object
     let i;
 
     for (i in objJSON)
-        arrNew.push(objJSON[i]); // add an object into an array
+        arrNew.push(objJSON[i]);
 
     return arrNew;
 }
-function findIndexAnObjectInArray(objArray,objPropertyName,objPropertyValue) {
+function findIndexAnObjectInArray(objectArray,objPropertyName,objPropertyValue) {
     //Find index of an object in array by its properties name and value
     //Input: an array, object properties: name and value
     //Output: index or -1 if it is not found
 
-    if (Array.isArray(objArray))
-        return objArray.findIndex(objIndex => objIndex[objPropertyName] === objPropertyValue);
+    if (Array.isArray(objectArray))
+        return objectArray.findIndex(objIndex => objIndex[objPropertyName] === objPropertyValue);
     else
         return -1;
 }
