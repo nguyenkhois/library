@@ -34,6 +34,30 @@ function limitInputLength(elementID,length) {
         return true;
 }
 
+//---------- Date time ----------
+function addZeroToDateTime(sString){
+    if (sString.toString().length === 1)
+        sString = "0" + sString;
+
+    return sString;
+}
+function getCurrentDate(){
+    let currentDate = new Date();
+    let date = currentDate.getDate();
+    let month = currentDate.getMonth()+1; //The numeric representation of months in JavaScript start on '0', so you will need to add the code necessary for making the months start on '1'
+    let year = currentDate.getFullYear();
+
+    return year + "-" + addZeroToDateTime(month) + "-" + addZeroToDateTime(date);
+}
+function getCurrentTime() {
+    let currentTime = new Date();
+    let hours = currentTime.getHours();
+    let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
+
+    return addZeroToDateTime(hours) + ":" + addZeroToDateTime(minutes) + ":" + addZeroToDateTime(seconds);
+}
+
 //---------- Object and Array ----------
 function buildJSONString(objectArray) {
     //Build JSON string from an array of objects
@@ -79,26 +103,52 @@ function findIndexAnObjectInArray(objectArray,objPropertyName,objPropertyValue) 
         return -1;
 }
 
-//---------- Date time ----------
-function addZeroToDateTime(sString){
-    if (sString.toString().length === 1)
-        sString = "0" + sString;
+//---------- Object - Array - Method - Constructor ----------
+OwnObjectArray = {};
+OwnObjectArray.toJSONString = function (objectArray) {
+    try{
+        let i;
+        let sJSON;
+        let arrLength = 0;
 
-    return sString;
-}
-function getCurrentDate(){
-    let currentDate = new Date();
-    let date = currentDate.getDate();
-    let month = currentDate.getMonth()+1; //The numeric representation of months in JavaScript start on '0', so you will need to add the code necessary for making the months start on '1'
-    let year = currentDate.getFullYear();
+        Array.isArray(objectArray) ? arrLength = objectArray.length : sJSON = '';
+        if (arrLength > 0){
+            sJSON = "[";
+            for (i in objectArray){
+                sJSON += JSON.stringify(objectArray[i]);
+                if (i < arrLength-1)
+                    sJSON += ",";
+            }
+            sJSON += "]";
+        }
+        return sJSON;
+    }catch(e){
+        return false;
+    }
+};
+OwnObjectArray.toObjectArray = function (stringJSON){
+    try{
+        let arrNew = [];
+        let objJSON = JSON.parse(stringJSON) || {}; //convert from JSON string to JSON object
+        let i;
 
-    return year + "-" + addZeroToDateTime(month) + "-" + addZeroToDateTime(date);
-}
-function getCurrentTime() {
-    let currentTime = new Date();
-    let hours = currentTime.getHours();
-    let minutes = currentTime.getMinutes();
-    let seconds = currentTime.getSeconds();
+        if (objJSON){
+            for (i in objJSON)
+                arrNew.push(objJSON[i]); // add an object into an array
+        }
 
-    return addZeroToDateTime(hours) + ":" + addZeroToDateTime(minutes) + ":" + addZeroToDateTime(seconds);
-}
+        return arrNew;
+    }catch(e){
+        return false;
+    }
+};
+OwnObjectArray.findIndex = function (objectArray,objPropertyName,objPropertyValue) {
+    try{
+        if (Array.isArray(objectArray))
+            return objectArray.findIndex(objIndex => objIndex[objPropertyName] === objPropertyValue);
+        else
+            return -1;
+    }catch(e){
+        return false;
+    }
+};
