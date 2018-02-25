@@ -12,7 +12,7 @@ I make this library for my job and share it to other who want to use in their pr
 
   Made by using HTML5, CSS3, Bootstrap 4, jQuery and more.
 
-## **My example codes on [Codepen](https://codepen.io/khois/)**
+## **My example codes on [Codepen](https://codepen.io/khois/collections/)**
 ### CSS
 * [CSS - Simple hamburger menu](https://codepen.io/khois/pen/xXBRvK)
 * [CSS - Animation hamburger menu](https://codepen.io/khois/pen/dVrzej)
@@ -21,6 +21,7 @@ I make this library for my job and share it to other who want to use in their pr
 
 ### JavaScript
 * [Pass an object as the argument to a onclick function](https://codepen.io/khois/pen/WMdEgZ)
+* [Sorting for object array with methods](https://codepen.io/khois/pen/aqRdqz)
 
 ## **My repositories on GitHub**
 ### JavaScript
