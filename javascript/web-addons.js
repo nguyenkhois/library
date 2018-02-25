@@ -104,52 +104,53 @@ function findIndexAnObjectInArray(objectArray,objPropertyName,objPropertyValue) 
 }
 
 //---------- Object - Array - Method - Constructor ----------
-OwnObjectArray = {};
-OwnObjectArray.toJSONString = function (objectArray) {
-    try{
-        let i;
-        let sJSON;
-        let arrLength = 0;
+OwnObjectArray = {
+    toJSONString(objectArray) {
+        try{
+            let i;
+            let sJSON;
+            let arrLength = 0;
 
-        Array.isArray(objectArray) ? arrLength = objectArray.length : sJSON = '';
-        if (arrLength > 0){
-            sJSON = "[";
-            for (i in objectArray){
-                sJSON += JSON.stringify(objectArray[i]);
-                if (i < arrLength-1)
-                    sJSON += ",";
+            Array.isArray(objectArray) ? arrLength = objectArray.length : sJSON = '';
+            if (arrLength > 0){
+                sJSON = "[";
+                for (i in objectArray){
+                    sJSON += JSON.stringify(objectArray[i]);
+                    if (i < arrLength-1)
+                        sJSON += ",";
+                }
+                sJSON += "]";
             }
-            sJSON += "]";
+            return sJSON;
+        }catch(e){
+            return false;
         }
-        return sJSON;
-    }catch(e){
-        return false;
-    }
-};
-OwnObjectArray.toObjectArray = function (stringJSON){
-    try{
-        let arrNew = [];
-        let objJSON = JSON.parse(stringJSON) || {}; //convert from JSON string to JSON object
-        let i;
+    },
+    toObjectArray(stringJSON){
+        try{
+            let arrNew = [];
+            let objJSON = JSON.parse(stringJSON) || {}; //convert from JSON string to JSON object
+            let i;
 
-        if (objJSON){
-            for (i in objJSON)
-                arrNew.push(objJSON[i]); // add an object into an array
+            if (objJSON){
+                for (i in objJSON)
+                    arrNew.push(objJSON[i]); // add an object into an array
+            }
+
+            return arrNew;
+        }catch(e){
+            return false;
         }
-
-        return arrNew;
-    }catch(e){
-        return false;
-    }
-};
-OwnObjectArray.findIndex = function (objectArray,objPropertyName,objPropertyValue) {
-    try{
-        if (Array.isArray(objectArray))
-            return objectArray.findIndex(objIndex => objIndex[objPropertyName] === objPropertyValue);
-        else
-            return -1;
-    }catch(e){
-        return false;
+    },
+    findIndex(objectArray,objPropertyName,objPropertyValue) {
+        try{
+            if (Array.isArray(objectArray))
+                return objectArray.findIndex(objIndex => objIndex[objPropertyName] === objPropertyValue);
+            else
+                return -1;
+        }catch(e){
+            return false;
+        }
     }
 };
 
