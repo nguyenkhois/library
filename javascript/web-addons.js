@@ -151,6 +151,31 @@ OwnObjectArray = {
         }catch(e){
             return false;
         }
+    },
+    sortByAlphabet(objectArray,objPropertyName,order){
+        let objPropertyNameLowerCase = objPropertyName.toLowerCase();
+        objectArray.sort(function(a, b){
+            let x = a[objPropertyNameLowerCase];
+            let y = b[objPropertyNameLowerCase];
+            if (order === 1){ //1 is mean descending
+                if (x < y) {return 1;}
+                if (x > y) {return -1;}
+            }else{ //0 or other is mean ascending
+                if (x < y) {return -1;}
+                if (x > y) {return 1;}
+            }
+            return 0;
+        });
+        return objectArray;
+    },
+    sortByNumeric(objectArray,objPropertyName,order){
+        objectArray.sort(function (a, b){
+            if (order === 1) //1 is mean descending
+                return b[objPropertyName] - a[objPropertyName];
+            else //0 and other is mean ascending
+                return a[objPropertyName] - b[objPropertyName];
+        });
+        return objectArray;
     }
 };
 
