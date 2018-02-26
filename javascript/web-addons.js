@@ -104,7 +104,7 @@ function findIndexAnObjectInArray(objectArray,objPropertyName,objPropertyValue) 
 }
 
 //---------- Object - Array - Method - Constructor ----------
-OwnObjectArray = {
+let OwnObjectArray = {
     toJSONString(objectArray) {
         try{
             let i;
@@ -153,10 +153,9 @@ OwnObjectArray = {
         }
     },
     sortByAlphabet(objectArray,objPropertyName,order){
-        let objPropertyNameLowerCase = objPropertyName.toLowerCase();
         objectArray.sort(function(a, b){
-            let x = a[objPropertyNameLowerCase];
-            let y = b[objPropertyNameLowerCase];
+            let x = a[objPropertyName];
+            let y = b[objPropertyName];
             if (order === 1){ //1 is mean descending
                 if (x < y) {return 1;}
                 if (x > y) {return -1;}
@@ -180,7 +179,7 @@ OwnObjectArray = {
 };
 
 //---------- Query string - URL ----------
-function getParameterValue(param){
+function getParamFromUrl(param){
     try{
         let sQueryString = document.URL.split("?")[1];
         let searchParams = new URLSearchParams(sQueryString);
