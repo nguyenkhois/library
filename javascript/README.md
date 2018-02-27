@@ -6,7 +6,7 @@
 let objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"Paula","age":29}];
 ```
 * OwnObjectArray.toJSONString()
-    * This method convert an object array to a JSON string
+    * This method converts an object array to a JSON string
         * Input: an object array
         * Output: a JSON string
     ```
@@ -14,14 +14,14 @@ let objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"
     console.log(myJSONString);
     ```
 * OwnObjectArray.toObjectArray()
-    * This method convert a JSON string to an object array
+    * This method converts a JSON string to an object array
         * Input: a JSON string
         * Output: an object array
     ```
     let objectArray = OwnObjectArray.toObjectArray(myJSONString);
     ```
 * OwnObjectArray.findIndex()
-    * This method find and return the index of an object in object array
+    * This method returns the index of an object in object array
         * Input: an object array, property name (string), property value
         * Output: it returns the index of the first object in an object array. It returns -1 if the object is not found. 
     ```
