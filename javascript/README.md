@@ -1,6 +1,6 @@
 # How to use
 ### OwnObjectArray
-* [Online demo for OwnObjectArray](https://codepen.io/khois/pen/aqRdqz)
+* [Online demo for OwnObjectArray](https://codepen.io/khois/pen/oEJqra)
 * Testing purpose
 ```
 let objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"Paula","age":29}];
