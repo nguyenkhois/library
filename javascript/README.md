@@ -33,14 +33,14 @@ let objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"
         * Input: an object array, property name (string), order (0-ascending / 1-descending)
         * Output: a sorted array
     ```
-    let sortObjectArray = OwnObjectArray.sortByAlphabet(objectArray,'name',1);
-    console.log(sortObjectArray);
+    let sortedObjectArray = OwnObjectArray.sortByAlphabet(objectArray,'name',1);
+    console.log(sortedObjectArray);
     ```
 * OwnObjectArray.sortByNumeric()
    * This method method sorts an object array by numerical property value
        * Input: an object array, property name (string), order (0-ascending / 1-descending)
        * Output: a sorted array
    ```
-   let sortObjectArray = OwnObjectArray.sortByNumeric(objectArray,'age',1);
-   console.log(sortObjectArray);
+   let sortedObjectArray = OwnObjectArray.sortByNumeric(objectArray,'age',1);
+   console.log(sortedObjectArray);
    ```
