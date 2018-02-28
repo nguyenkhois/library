@@ -153,28 +153,36 @@ let OwnObjectArray = {
         }
     },
     sortByAlphabet(objectArray,objPropertyName,order){
-        objectArray.sort(function(a, b){
-            let x = a[objPropertyName];
-            let y = b[objPropertyName];
-            if (order === 1){ //1 is mean descending
-                if (x < y) {return 1;}
-                if (x > y) {return -1;}
-            }else{ //0 or other is mean ascending
-                if (x < y) {return -1;}
-                if (x > y) {return 1;}
-            }
-            return 0;
-        });
-        return objectArray;
+        try{
+            objectArray.sort(function(a, b){
+                let x = a[objPropertyName];
+                let y = b[objPropertyName];
+                if (order === 1){ //1 is mean descending
+                    if (x < y) {return 1;}
+                    if (x > y) {return -1;}
+                }else{ //0 or other is mean ascending
+                    if (x < y) {return -1;}
+                    if (x > y) {return 1;}
+                }
+                return 0;
+            });
+            return objectArray;
+        }catch (e) {
+            return false;
+        }
     },
     sortByNumeric(objectArray,objPropertyName,order){
-        objectArray.sort(function (a, b){
-            if (order === 1) //1 is mean descending
-                return b[objPropertyName] - a[objPropertyName];
-            else //0 and other is mean ascending
-                return a[objPropertyName] - b[objPropertyName];
-        });
-        return objectArray;
+        try{
+            objectArray.sort(function (a, b){
+                if (order === 1) //1 is mean descending
+                    return b[objPropertyName] - a[objPropertyName];
+                else //0 and other is mean ascending
+                    return a[objPropertyName] - b[objPropertyName];
+            });
+            return objectArray;
+        }catch (e) {
+            return false;
+        }
     }
 };
 
