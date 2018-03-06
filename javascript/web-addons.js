@@ -107,39 +107,27 @@ function findIndexAnObjectInArray(objectArray,objPropertyName,objPropertyValue) 
 let OwnObjectArray = {
     toJSONString(objectArray) {
         try{
-            let i;
             let sJSON;
             let arrLength = 0;
 
             Array.isArray(objectArray) ? arrLength = objectArray.length : sJSON = '';
-            if (arrLength > 0){
-                sJSON = "[";
-                for (i in objectArray){
-                    sJSON += JSON.stringify(objectArray[i]);
-                    if (i < arrLength-1)
-                        sJSON += ",";
-                }
-                sJSON += "]";
-            }
-            return sJSON;
+            if (arrLength > 0)
+                return JSON.stringify(objectArray);
+            else
+                return sJSON;//null string
         }catch(e){
             return false;
         }
     },
-    toObjectArray(stringJSON){
+    toObjectArray(sJSON){
         try{
-            let arrNew = [];
-            let objJSON = JSON.parse(stringJSON) || {}; //convert from JSON string to JSON object
-            let i;
-
-            if (objJSON){
-                for (i in objJSON)
-                    arrNew.push(objJSON[i]); // add an object into an array
-            }
-
-            return arrNew;
+            let objJSON = JSON.parse(sJSON);
+            if (Array.isArray(objJSON))
+                return objJSON;
+            else
+                return false
         }catch(e){
-            return false;
+            return false
         }
     },
     findIndex(objectArray,objPropertyName,objPropertyValue) {
@@ -153,36 +141,28 @@ let OwnObjectArray = {
         }
     },
     sortByAlphabet(objectArray,objPropertyName,order){
-        try{
-            objectArray.sort(function(a, b){
-                let x = a[objPropertyName];
-                let y = b[objPropertyName];
-                if (order === 1){ //1 is mean descending
-                    if (x < y) {return 1;}
-                    if (x > y) {return -1;}
-                }else{ //0 or other is mean ascending
-                    if (x < y) {return -1;}
-                    if (x > y) {return 1;}
-                }
-                return 0;
-            });
-            return objectArray;
-        }catch (e) {
-            return false;
-        }
+        objectArray.sort(function(a, b){
+            let x = a[objPropertyName];
+            let y = b[objPropertyName];
+            if (order === 1){ //1 is mean descending
+                if (x < y) {return 1;}
+                if (x > y) {return -1;}
+            }else{ //0 or other is mean ascending
+                if (x < y) {return -1;}
+                if (x > y) {return 1;}
+            }
+            return 0;
+        });
+        return objectArray;
     },
     sortByNumeric(objectArray,objPropertyName,order){
-        try{
-            objectArray.sort(function (a, b){
-                if (order === 1) //1 is mean descending
-                    return b[objPropertyName] - a[objPropertyName];
-                else //0 and other is mean ascending
-                    return a[objPropertyName] - b[objPropertyName];
-            });
-            return objectArray;
-        }catch (e) {
-            return false;
-        }
+        objectArray.sort(function (a, b){
+            if (order === 1) //1 is mean descending
+                return b[objPropertyName] - a[objPropertyName];
+            else //0 and other is mean ascending
+                return a[objPropertyName] - b[objPropertyName];
+        });
+        return objectArray;
     }
 };
 
