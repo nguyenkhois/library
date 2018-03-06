@@ -167,7 +167,7 @@ let OwnObjectArray = {
     filterByProperty(objectArray,sPropertyName,sSeekingValue){
         if (Array.isArray(objectArray)){
             if (objectArray.length > 0)
-                return objectArray.filter(objItem => objItem[sPropertyName] === objItem[sSeekingValue]);
+                return objectArray.filter(objItem => objItem[sPropertyName] === sSeekingValue);
             else
                 return null
         }else
