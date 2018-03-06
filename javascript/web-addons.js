@@ -130,20 +130,20 @@ let OwnObjectArray = {
             return false
         }
     },
-    findIndex(objectArray,objPropertyName,objPropertyValue) {
+    findIndex(objectArray,sPropertyName,sPropertyValue) {
         try{
             if (Array.isArray(objectArray))
-                return objectArray.findIndex(objIndex => objIndex[objPropertyName] === objPropertyValue);
+                return objectArray.findIndex(objItem => objItem[sPropertyName] === sPropertyValue);
             else
                 return -1;
         }catch(e){
             return false;
         }
     },
-    sortByAlphabet(objectArray,objPropertyName,order){
+    sortByAlphabet(objectArray,sPropertyName,order){
         objectArray.sort(function(a, b){
-            let x = a[objPropertyName];
-            let y = b[objPropertyName];
+            let x = a[sPropertyName];
+            let y = b[sPropertyName];
             if (order === 1){ //1 is mean descending
                 if (x < y) {return 1;}
                 if (x > y) {return -1;}
@@ -155,14 +155,23 @@ let OwnObjectArray = {
         });
         return objectArray;
     },
-    sortByNumeric(objectArray,objPropertyName,order){
+    sortByNumeric(objectArray, sPropertyName,order){
         objectArray.sort(function (a, b){
             if (order === 1) //1 is mean descending
-                return b[objPropertyName] - a[objPropertyName];
+                return b[sPropertyName] - a[sPropertyName];
             else //0 and other is mean ascending
-                return a[objPropertyName] - b[objPropertyName];
+                return a[sPropertyName] - b[sPropertyName];
         });
         return objectArray;
+    },
+    filterByProperty(objectArray,sPropertyName,sSeekingValue){
+        if (Array.isArray(objectArray)){
+            if (objectArray.length > 0)
+                return objectArray.filter(objItem => objItem[sPropertyName] === objItem[sSeekingValue]);
+            else
+                return null
+        }else
+            return false
     }
 };
 
