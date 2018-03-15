@@ -107,28 +107,20 @@ function findIndexAnObjectInArray(objectArray,objPropertyName,objPropertyValue) 
 let OwnObjectArray = {
     toJSONString(objectArray) {
         try{
-            let sJSON;
-            let arrLength = 0;
-
-            Array.isArray(objectArray) ? arrLength = objectArray.length : sJSON = '';
-            if (arrLength > 0)
+            if (Array.isArray(objectArray) && objectArray.length > 0)
                 return JSON.stringify(objectArray);
             else
-                return sJSON;//null string
-        }catch(e){
-            return false;
-        }
+                return null
+        }catch(e){return false}
     },
     toObjectArray(sJSON){
         try{
             let objJSON = JSON.parse(sJSON) || [];
-            if (Array.isArray(objJSON))
+            if (Array.isArray(objJSON) && objJSON.length > 0)
                 return objJSON;
             else
-                return false
-        }catch(e){
-            return false
-        }
+                return null
+        }catch(e){return false}
     },
     findIndex(objectArray,sPropertyName,sPropertyValue) {
         try{
@@ -136,9 +128,7 @@ let OwnObjectArray = {
                 return objectArray.findIndex(objItem => objItem[sPropertyName] === sPropertyValue);
             else
                 return -1;
-        }catch(e){
-            return false;
-        }
+        }catch(e){return false;}
     },
     sortByAlphabet(objectArray,sPropertyName,order){
         objectArray.sort(function(a, b){
