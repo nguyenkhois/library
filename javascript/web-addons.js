@@ -121,7 +121,7 @@ let OwnObjectArray = {
     },
     toObjectArray(sJSON){
         try{
-            let objJSON = JSON.parse(sJSON);
+            let objJSON = JSON.parse(sJSON) || [];
             if (Array.isArray(objJSON))
                 return objJSON;
             else
@@ -169,6 +169,19 @@ let OwnObjectArray = {
             if (objectArray.length > 0)
                 return objectArray.filter(objItem => objItem[sPropertyName] === sSeekingValue);
             else
+                return null
+        }else
+            return false
+    },
+    getMax(objectArray,sPropertyName){
+        if (Array.isArray(objectArray)){
+            if (objectArray.length > 0){
+                let i;
+                let arrValues = [];
+                for (i in objectArray)
+                    arrValues.push(objectArray[i][sPropertyName]);
+                return Math.max(...arrValues);
+            }else
                 return null
         }else
             return false
