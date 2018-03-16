@@ -128,53 +128,61 @@ let OwnObjectArray = {
                 return objectArray.findIndex(objItem => objItem[sPropertyName] === sPropertyValue);
             else
                 return -1;
-        }catch(e){return false;}
+        }catch(e){return false}
     },
     sortByAlphabet(objectArray,sPropertyName,order){
-        objectArray.sort(function(a, b){
-            let x = a[sPropertyName];
-            let y = b[sPropertyName];
-            if (order === 1){ //1 is mean descending
-                if (x < y) {return 1;}
-                if (x > y) {return -1;}
-            }else{ //0 or other is mean ascending
-                if (x < y) {return -1;}
-                if (x > y) {return 1;}
-            }
-            return 0;
-        });
-        return objectArray;
+        try{
+            objectArray.sort(function(a, b){
+                let x = a[sPropertyName];
+                let y = b[sPropertyName];
+                if (order === 1){ //1 is mean descending
+                    if (x < y) {return 1;}
+                    if (x > y) {return -1;}
+                }else{ //0 or other is mean ascending
+                    if (x < y) {return -1;}
+                    if (x > y) {return 1;}
+                }
+                return 0;
+            });
+            return objectArray;
+        }catch(e){return false}
     },
     sortByNumeric(objectArray, sPropertyName,order){
-        objectArray.sort(function (a, b){
-            if (order === 1) //1 is mean descending
-                return b[sPropertyName] - a[sPropertyName];
-            else //0 and other is mean ascending
-                return a[sPropertyName] - b[sPropertyName];
-        });
-        return objectArray;
+        try{
+            objectArray.sort(function (a, b){
+                if (order === 1) //1 is mean descending
+                    return b[sPropertyName] - a[sPropertyName];
+                else //0 and other is mean ascending
+                    return a[sPropertyName] - b[sPropertyName];
+            });
+            return objectArray;
+        }catch(e){return false}
     },
     filterByProperty(objectArray,sPropertyName,sSeekingValue){
-        if (Array.isArray(objectArray)){
-            if (objectArray.length > 0)
-                return objectArray.filter(objItem => objItem[sPropertyName] === sSeekingValue);
-            else
-                return null
-        }else
-            return false
+        try{
+            if (Array.isArray(objectArray)){
+                if (objectArray.length > 0)
+                    return objectArray.filter(objItem => objItem[sPropertyName] === sSeekingValue);
+                else
+                    return null
+            }else
+                return false
+        }catch(e){return false}
     },
     getMax(objectArray,sPropertyName){
-        if (Array.isArray(objectArray)){
-            if (objectArray.length > 0){
-                let i;
-                let arrValues = [];
-                for (i in objectArray)
-                    arrValues.push(objectArray[i][sPropertyName]);
-                return Math.max(...arrValues);
+        try{
+            if (Array.isArray(objectArray)){
+                if (objectArray.length > 0){
+                    let i;
+                    let arrValues = [];
+                    for (i in objectArray)
+                        arrValues.push(objectArray[i][sPropertyName]);
+                    return Math.max(...arrValues);
+                }else
+                    return null
             }else
-                return null
-        }else
-            return false
+                return false
+        }catch(e){return false}
     }
 };
 
