@@ -116,10 +116,10 @@ let OwnObjectArray = {
     toObjectArray(sJSON){
         try{
             let objJSON = JSON.parse(sJSON) || [];
-            if (Array.isArray(objJSON) && objJSON.length > 0)
+            if (Array.isArray(objJSON))
                 return objJSON;
             else
-                return null
+                return []
         }catch(e){return false}
     },
     findIndex(objectArray,sPropertyName,sPropertyValue) {
