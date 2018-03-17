@@ -185,7 +185,11 @@ let OwnObjectArray = {
         }catch(e){return false}
     }
 };
-
+let OwnString = {
+    toText(sHtml){
+        return sHtml.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
+    }
+};
 //---------- Query string - URL ----------
 function getParamFromUrl(param){
     try{
