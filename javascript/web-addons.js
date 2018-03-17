@@ -188,7 +188,10 @@ let OwnObjectArray = {
 let OwnString = {
     toText(sHtml){
         return sHtml.replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;");
+                    .replace(/>/g, "&gt;")
+                    .replace(/\//g,"&frasl;")
+                    .replace(/\'/g,"&apos;")
+                    .replace(/\"/g, "&quot;");
     }
 };
 //---------- Prototypes ----------
