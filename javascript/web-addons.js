@@ -194,7 +194,10 @@ let OwnString = {
 //---------- Prototypes ----------
 String.prototype.toText = function(){
     return this.replace(/</g, "&lt;")
-               .replace(/>/g, "&gt;");
+               .replace(/>/g, "&gt;")
+               .replace(/\//g,"&frasl;")
+               .replace(/\'/g,"&apos;")
+               .replace(/\"/g, "&quot;");
 }
 //---------- Query string - URL ----------
 function getParamFromUrl(param){
