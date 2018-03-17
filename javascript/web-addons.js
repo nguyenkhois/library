@@ -201,7 +201,7 @@ String.prototype.toText = function(){
                .replace(/\//g,"&frasl;")
                .replace(/\'/g,"&apos;")
                .replace(/\"/g, "&quot;");
-}
+};
 //---------- Query string - URL ----------
 function getParamFromUrl(param){
     try{
