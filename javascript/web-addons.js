@@ -187,7 +187,8 @@ let OwnObjectArray = {
 };
 let OwnString = {
     toText(sHtml){
-        return sHtml.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
+        return sHtml.replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
     }
 };
 //---------- Query string - URL ----------
