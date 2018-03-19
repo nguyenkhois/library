@@ -11,7 +11,5 @@ String.prototype.limitWords = function(limitNumber){
         limitNumber = parseInt(limitNumber) || 0;
         if (limitNumber > 0 && this.length > 0)
             return this.split(" ").slice(0,limitNumber).join(" ");
-        else
-            return this
     }catch(e){}
 };
