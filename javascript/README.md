@@ -84,5 +84,5 @@ let objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"
    ```
 * String.prototype.limitWords()
    ```
-   let newString = htmlString.limitWords(int);
+   let newString = htmlString.limitWords(100);
    ```
