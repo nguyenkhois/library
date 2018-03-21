@@ -25,6 +25,8 @@ I make this library for my job and share it to other who want to use in their pr
 
 ## **My repositories on GitHub**
 ### JavaScript
+* Real time web chat application [(Repo)](https://github.com/nguyenkhois/chat-application) [(View lastest version)](https://www.vlexikon.com/demo/js-chatapp/v1.1/views/)
+* Simple web shop [(Repo)](https://github.com/nguyenkhois/js-mandatory-web-shop) [(View lastest version)](https://www.vlexikon.com/demo/js-mandatory-web-shop-4/views/products.html)
 * Mini calculator [(Repo)](https://github.com/nguyenkhois/js-minicalculator) [(View)](https://nguyenkhois.github.io/js-minicalculator/)
 * Memory game [(Repo)](https://github.com/nguyenkhois/js-memorygame) [(View)](https://nguyenkhois.github.io/js-memorygame/)
 
