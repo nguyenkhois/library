@@ -3,8 +3,8 @@
 |Files|Functions|Notes|
 |----|----|----|
 |functions.js|Many functions can reused|Using ES6|
-|own-objects.js|Many your custom objects with its methods|Using ES6|
-|string-prototypes.js|Many custom prototypes for the String global object|Using ES6|
+|own-objects.js|Custom objects with its methods|Using ES6|
+|string-prototypes.js|Custom prototypes for the String global object|Using ES6|
 
 ## Functions (functions.js)
 |Functions|Descriptions|
