@@ -20,8 +20,9 @@ I make this library for my job and share it to other who want to use in their pr
 * [Bootstrap - Mix vertical with inline layout in a form](https://codepen.io/khois/pen/BmKGzQ) 
 
 ### JavaScript
+* [Custom methods for an object array](https://codepen.io/khois/pen/oEJqra/)
+* [Custom prototypes for the String global object](https://codepen.io/khois/pen/rdMQQq)
 * [Pass an object as the argument to a onclick function](https://codepen.io/khois/pen/WMdEgZ)
-* [Sorting for object array with methods](https://codepen.io/khois/pen/aqRdqz)
 
 ## **My repositories on GitHub**
 ### JavaScript
