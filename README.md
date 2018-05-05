@@ -12,7 +12,7 @@ I make this library for my job and share it to other who want to use in their pr
 
   Made by using HTML5, CSS3, Bootstrap 4, jQuery and more.
 
-## **My example codes on [Codepen](https://codepen.io/khois/collections/)**
+## **My example codes on both [CodePen](https://codepen.io/khois/collections) and [CodeSandbox](https://codesandbox.io/u/nguyenkhois)**
 ### CSS
 * [CSS - Simple hamburger menu](https://codepen.io/khois/pen/xXBRvK)
 * [CSS - Animation hamburger menu](https://codepen.io/khois/pen/dVrzej)
@@ -23,6 +23,9 @@ I make this library for my job and share it to other who want to use in their pr
 * [Custom methods for an object array](https://codepen.io/khois/pen/oEJqra/)
 * [Custom prototypes for the String global object](https://codepen.io/khois/pen/rdMQQq)
 * [Pass an object as the argument to a onclick function](https://codepen.io/khois/pen/WMdEgZ)
+
+### React
+* [Simple React-Redux example](https://codesandbox.io/s/lx3y9q51yl)
 
 ## **My repositories on GitHub**
 ### JavaScript
