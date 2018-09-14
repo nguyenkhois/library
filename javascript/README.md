@@ -5,6 +5,7 @@
 |functions.js|Many functions can reused|Using ES6|
 |own-objects.js|Custom objects with its methods|Using ES6|
 |string-prototypes.js|Custom prototypes for the String global object|Using ES6|
+|array-prototypes.js|Custom prototypes for the Array global object|Using ES6|
 
 ## Functions (functions.js)
 |Functions|Descriptions|
@@ -31,46 +32,17 @@
 |.filterByProperty()|Get all objects in an array by their properties|
 |.getMax()|Get an object in an array which has max value of its property|
 
-* Testing purpose
-```
-let objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"Paula","age":29}];
-```
-* OwnObjectArray.toJSONString()
-    * Input: an object array
-    * Output: a JSON string
-    ```
-    let myJSONString = OwnObjectArray.toJSONString(objectArray);   
-    console.log(myJSONString);
-    ```
-* OwnObjectArray.toObjectArray()
-    * Input: a JSON string
-    * Output: an object array
-    ```
-    let objectArray = OwnObjectArray.toObjectArray(myJSONString);
-    ```
-* OwnObjectArray.findIndex()
-    * Input: an object array, property name (string), property value
-    * Output: it returns the index of the first object in an object array. It returns -1 if the object is not found. 
-    ```
-    let myIndex = OwnObjectArray.findIndex(objectArray,'name','Paula');   
-    console.log(myIndex);
-    ```
-* OwnObjectArray.sortByAlphabet()
-    * Input: an object array, property name (string), order (0-ascending / 1-descending)
-    * Output: a sorted array
-    ```
-    let sortedObjectArray = OwnObjectArray.sortByAlphabet(objectArray,'name',1);
-    console.log(sortedObjectArray);
-    ```
-* OwnObjectArray.sortByNumeric()
-    * Input: an object array, property name (string), order (0-ascending / 1-descending)
-    * Output: a sorted array
-   ```
-   let sortedObjectArray = OwnObjectArray.sortByNumeric(objectArray,'age',1);
-   console.log(sortedObjectArray);
-   ```
+Example
+````
+import { OwnObjectArray } from 'g-jslib';
 
-## String.Prototypes
+const objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"Paula","age":29}];
+
+const sortedObjectArray = OwnObjectArray.sortByNumeric(objectArray, 'age', 1);
+console.log(sortedObjectArray);
+````
+
+## String.prototype
 * [Online demo for these prototypes](https://codepen.io/khois/pen/rdMQQq)
 
 |Prototypes|Descriptions|
@@ -78,11 +50,49 @@ let objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"
 |.toText()|Returns a plain text with converted HTML tags (<, >, /)|
 |.limitWords()|Returns a string with your limited words|
 
-* String.prototype.toText()
-   ```
-   let newString = htmlString.toText();
-   ```
-* String.prototype.limitWords()
-   ```
-   let newString = htmlString.limitWords(100);
-   ```
+Example
+````
+import 'g-jslib';
+
+const stringInput = "The slice() method creates a new array. It does not remove any elements from the source array.";
+
+console.log(stringInput.limitWords(7))
+````
+
+## Array.prototype
+* [Online demo for these prototypes](https://codepen.io/khois/pen/KxRPGX)
+
+|Prototypes|Descriptions|
+|---|---|
+|.toJSONString()|Converts an object array to a JSON string|
+|.findIndexByProperty()|Returns the index of an object in object array|
+|.sortByAlphabet()|Sorts an object array by string property value|
+|.sortByNumeric()|Sorts an object array by numerical property value|
+|.filterByProperty()|Get all objects in an array by their properties|
+|.getMax()|Get an object in an array which has max value of its property|
+
+Example
+````
+import 'g-jslib';
+
+const productArray = [
+  {
+    productId: 1,
+    productName: 'Apple',
+    productPrice: 20
+  },
+  {
+    productId: 3,
+    productName: 'Lemon',
+    productPrice: 50
+  },
+  {
+    productId: 2,
+    productName: 'Banana',
+    productPrice: 5
+  }
+];
+
+const sortedArray = productArray.sortByAlphabet('productName', 0);
+console.log(sortedArray);
+````
