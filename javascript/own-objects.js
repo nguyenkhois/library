@@ -27,8 +27,8 @@ let OwnObjectArray = {
     sortByAlphabet(objectArray,sPropertyName,order){
         try{
             objectArray.sort(function(a, b){
-                let x = a[sPropertyName];
-                let y = b[sPropertyName];
+                let x = a[sPropertyName].toUpperCase();
+                let y = b[sPropertyName].toUpperCase();
                 if (order === 1){ //1 is mean descending
                     if (x < y) {return 1;}
                     if (x > y) {return -1;}
