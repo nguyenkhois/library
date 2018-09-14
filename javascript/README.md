@@ -6,6 +6,7 @@
 |own-objects.js|Custom objects with its methods|Using ES6|
 |string-prototypes.js|Custom prototypes for the String global object|Using ES6|
 |array-prototypes.js|Custom prototypes for the Array global object|Using ES6|
+|local-storage-methods.js|Custom LocalStorage methods|Using ES6|
 
 ## Functions (functions.js)
 |Functions|Descriptions|
