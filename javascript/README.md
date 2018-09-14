@@ -34,6 +34,7 @@
 
 Example
 ````
+// Install this package g-jslib from npmjs.com or include direct the file own-objects.js
 import { OwnObjectArray } from 'g-jslib';
 
 const objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name":"Paula","age":29}];
@@ -52,6 +53,7 @@ console.log(sortedObjectArray);
 
 Example
 ````
+// Install this package g-jslib from npmjs.com or include direct the file string-prototypes.js
 import 'g-jslib';
 
 const stringInput = "The slice() method creates a new array. It does not remove any elements from the source array.";
@@ -73,6 +75,7 @@ console.log(stringInput.limitWords(7))
 
 Example
 ````
+// Install this package g-jslib from npmjs.com or include direct the file array-prototypes.js
 import 'g-jslib';
 
 const productArray = [
