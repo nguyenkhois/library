@@ -62,17 +62,18 @@ const stringInput = "The slice() method creates a new array. It does not remove 
 console.log(stringInput.limitWords(7))
 ````
 
-## Array.prototype
+## Array.prototype - Using only for object array
 * [Online demo for these prototypes](https://codepen.io/khois/pen/KxRPGX)
 
 |Prototypes|Descriptions|
 |---|---|
 |.toJSONString()|Converts an object array to a JSON string|
-|.findIndexByProperty()|Returns the index of an object in object array|
-|.sortByAlphabet()|Sorts an object array by string property value|
-|.sortByNumeric()|Sorts an object array by numerical property value|
-|.filterByProperty()|Get all objects in an array by their properties|
-|.getMax()|Get an object in an array which has max value of its property|
+|.findIndexByProperty(sPropertyName, sPropertyValue)|Returns the index of an object in object array|
+|.sortByAlphabet(sPropertyName, orderKeyword)|Sorts an object array by string property value|
+|.sortByNumeric(sPropertyName, orderKeyword)|Sorts an object array by numerical property value|
+|.filterByProperty(sPropertyName, sSeekingValue)|Filter objects in an array by their properties|
+|.removeByProperty(sPropertyName, sSeekingValue)|Remove one or many objects in an array by their properties|
+|.getMax(sPropertyName)|Return the max value by object property|
 
 Example
 ````
