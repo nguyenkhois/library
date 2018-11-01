@@ -1,4 +1,4 @@
-# How to use
+# How to use [![Download on npm](https://img.shields.io/badge/npm-v1.2.1-blue.svg)](https://www.npmjs.com/package/g-jslib)
 ## Table of contents
 |Files|Functions|Notes|
 |----|----|----|
