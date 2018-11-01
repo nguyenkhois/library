@@ -2,11 +2,11 @@
 ## Table of contents
 |Files|Functions|Notes|
 |----|----|----|
-|functions.js|Many functions can reused|Using ES6|
-|own-objects.js|Custom methods that is using for object array|Using ES6|
-|local-storage-methods.js|Custom LocalStorage methods|Using ES6|
-|string-prototypes.js|Custom prototypes for the String global object|Using ES6|
-|array-prototypes.js|Custom prototypes for the Array global object|Using ES6|
+|[functions.js](#functions-functionsjs)|Many functions can reused|Using ES6|
+|[own-objects.js](#ownobjectarray-own-objectsjs)|Custom methods that is using for object array|Using ES6|
+|[local-storage-methods.js](#localstoragemethods-local-storage-methodsjs)|Custom LocalStorage methods|Using ES6|
+|[string-prototypes.js](#stringprototype)|Custom prototypes for the String global object|Using ES6|
+|[array-prototypes.js](#arrayprototype---using-only-for-object-array)|Custom prototypes for the Array global object|Using ES6|
 
 ## Functions (functions.js)
 |Functions|Descriptions|
@@ -19,6 +19,8 @@
 |getCurrentDate()|Swedish format|
 |getCurrentTime()|Swedish format|
 |getParamFromUrl(param)|get parameter value from URL|
+
+[Go to top](#how-to-use)
 
 ## OwnObjectArray (own-objects.js)
 * [Online demo for OwnObjectArray](https://codepen.io/khois/pen/oEJqra)
@@ -44,6 +46,8 @@ const sortedObjectArray = OwnObjectArray.sortByNumeric(objectArray, 'age', 1);
 console.log(sortedObjectArray);
 ````
 
+[Go to top](#how-to-use)
+
 ## LocalStorageMethods (local-storage-methods.js)
 | Module | Explain | Input | Output |
 |---|---|---|---|
@@ -68,6 +72,8 @@ console.log(LocalStorageMethods.retrieve('yourKey'));
 console.log(LocalStorageMethods.retrieve('myKey', 'Nothing'));
 ````
 
+[Go to top](#how-to-use)
+
 ## String.prototype
 * [Online demo for these prototypes](https://codepen.io/khois/pen/rdMQQq)
 
@@ -85,6 +91,8 @@ const stringInput = "The slice() method creates a new array. It does not remove 
 
 console.log(stringInput.limitWords(7))
 ````
+
+[Go to top](#how-to-use)
 
 ## Array.prototype - Using only for object array
 * [Online demo for these prototypes](https://codepen.io/khois/pen/KxRPGX)
@@ -125,3 +133,5 @@ const productArray = [
 const sortedArray = productArray.sortByAlphabet('productName', 0);
 console.log(sortedArray);
 ````
+
+[Go to top](#how-to-use)
