@@ -1,12 +1,12 @@
 # How to use
-## Index
+## Table of contents
 |Files|Functions|Notes|
 |----|----|----|
 |functions.js|Many functions can reused|Using ES6|
-|own-objects.js|Custom objects with its methods|Using ES6|
+|own-objects.js|Custom methods that is using for object array|Using ES6|
+|local-storage-methods.js|Custom LocalStorage methods|Using ES6|
 |string-prototypes.js|Custom prototypes for the String global object|Using ES6|
 |array-prototypes.js|Custom prototypes for the Array global object|Using ES6|
-|local-storage-methods.js|Custom LocalStorage methods|Using ES6|
 
 ## Functions (functions.js)
 |Functions|Descriptions|
@@ -42,6 +42,30 @@ const objectArray = [{"name":"Maria","age":20},{"name":"Peter","age":25},{"name"
 
 const sortedObjectArray = OwnObjectArray.sortByNumeric(objectArray, 'age', 1);
 console.log(sortedObjectArray);
+````
+
+## LocalStorageMethods (local-storage-methods.js)
+| Module | Explain | Input | Output |
+|---|---|---|---|
+| .removeAll() | Remove all keys in localStorage | No | No |
+| .remove(key) | Remove specific key | A `key` name as a string | No |
+| .retrieve(key, defaultReturn) | Retrieve specific key and return always an object | A `key` name as a string and data converted automatic from a string to a JSON object before it returned. Variable `defaultReturn` is optional and it will returned if the key is not found | A JSON object |
+| .store(key, value) | Store data into localStorage with an own key | A `key` name as a string and `value` will converted automatic to a string before it stored in localStorage | No |
+
+Example
+Store a key:
+````
+import { LocalStorageMethods } from 'g-jslib';
+
+LocalStorageMethods.store('yourKey', 'Hello!');
+````
+
+Retrieve keys with defaultReturn:
+````
+import { LocalStorageMethods } from 'g-jslib';
+
+console.log(LocalStorageMethods.retrieve('yourKey'));
+console.log(LocalStorageMethods.retrieve('myKey', 'Nothing'));
 ````
 
 ## String.prototype
