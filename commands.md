@@ -1,7 +1,6 @@
 **GIT COMMANDS**
 
 **ALIAS**
-
 alias al='alias'
 alias cl='clear'
 alias ga='git add '
