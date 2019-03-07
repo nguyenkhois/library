@@ -84,7 +84,7 @@ Array.prototype.getMax = function (sPropertyName) {
         if (this.length > 0) {
             let arrValues = [];
             for (let i = 0; i < arrLength; i++) {
-                arrValues.push(this[i][sPropertyName]);
+                arrValues = arrValues.concat([this[i][sPropertyName]]);
             }
 
             return Math.max.apply(Math, arrValues);
