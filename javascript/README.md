@@ -2,7 +2,7 @@
 ## Table of contents
 |Files|Functions|Notes|
 |----|----|----|
-|[array-prototypes.js](#arrayprototype---using-only-for-object-array)|Custom prototypes for the Array global object|Using ES6|
+|[array-prototypes.js](#arrayprototype---using-only-for-an-object-array)|Custom prototypes for the Array global object|Using ES6|
 |[functions.js](#functions-functionsjs)|The reuseable functions|Using ES6|
 |[local-storage-methods.js](#localstoragemethods-local-storage-methodsjs)|Custom LocalStorage methods|Using ES6|
 |[own-object-array.js](#ownobjectarray-own-objectsjs)|Custom methods for an object array|Using ES6|
