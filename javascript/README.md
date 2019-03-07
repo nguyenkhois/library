@@ -5,7 +5,7 @@
 |[array-prototypes.js](#arrayprototype---using-only-for-an-object-array)|Custom prototypes for the Array global object|Using ES6|
 |[functions.js](#functions-functionsjs)|The reuseable functions|Using ES6|
 |[local-storage-methods.js](#localstoragemethods-local-storage-methodsjs)|Custom LocalStorage methods|Using ES6|
-|[own-object-array.js](#ownobjectarray-own-objectarrayjs)|Custom methods for an object array|Using ES6|
+|[own-object-array.js](#ownobjectarray-own-object-arrayjs)|Custom methods for an object array|Using ES6|
 |[string-prototypes.js](#stringprototype)|Custom prototypes for the String global object|Using ES6|
 
 ## Array.prototype - Using only for an object array
